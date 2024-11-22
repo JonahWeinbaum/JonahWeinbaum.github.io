@@ -1,0 +1,33 @@
+#header {
+    background-color: #3b6a9e;
+    color: white;
+    font-family: monospace;
+    font-size: 24pt;
+    padding: 0px;
+    left: 0;
+    right: 0;
+    margin: 0;
+}
+
+html {
+    background-size: cover;
+    background-color: #181a1b;
+    font-family: monospace;
+    font-size: 16pt;
+    color: #e8e6e3;
+}
+
+a {
+    color: #3391ff;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 5px;
+    width:  100%;
+}
+
+ul.no-bullets {
+    list-style-type: none;
+}
