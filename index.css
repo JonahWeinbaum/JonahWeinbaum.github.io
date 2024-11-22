@@ -1,3 +1,16 @@
+/* Define the custom font */
+@font-face {
+    font-family: 'vulf'; /* The name you want to give the font */
+    src: url('fonts/VulfMono-Regular') format('otf'), /* Preferred format */
+    font-weight: normal; /* Optional: Define weight */
+    font-style: normal;  /* Optional: Define style */
+}
+
+/* Apply the custom font */
+body {
+    font-family: 'vulf', monospace; /* Fallback to sans-serif */
+}
+
 #header {
     background-color: #3b6a9e;
     color: white;
