@@ -1,91 +1,125 @@
 <html>
-<head>
-<style>
-  body {
-    background: hsl(154 50% 5%);
-    color: hsl(154 84% 70%);
-    text-shadow: 0 0 4px hsl(154 84% 70%);
-    font-family: monospace;
-    font-size: 16px;
-  }
+  <head>
+    <title>Jonah's cool website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="description" content="Jonah's Webpage" />
+    <style>
+      body {
+	  background: hsl(154 50% 5%);
+	  color: hsl(154 84% 70%);
+	  text-shadow: 0 0 4px hsl(154 84% 70%);
+	  font-family: monospace;
+	  font-size: 16px;
+      }
 
-  pre {
-    margin: auto;
-    display: flex;
-    text-align: left;
-  }
+      pre {
+	  margin: auto;
+	  display: flex;
+	  text-align: left;
+      }
 
-  #glare {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1; /* ensure the effect doesn't cover the text */
-  }
+      #glare {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  z-index: -1; /* ensure the effect doesn't cover the text */
+	  }
 
-  #interlaced {
-    position: fixed;
-    pointer-events: none;
-  }
+	   #interlaced {
+	       position: fixed;
+	       pointer-events: none;
+	   }
 
-  @keyframes blink {
-    0% {opacity: 0}
-    30% {opacity: 1}
-    70% {opacity: 1}
-    100% {opacity: 0}
-  }
+	   @keyframes blink {
+	       0% {opacity: 0}
+	       30% {opacity: 1}
+	       70% {opacity: 1}
+	       100% {opacity: 0}
+	   }
 
-  .header {
-    position: relative; /* Required for absolute positioning inside it */
-    display: inline; /* Center header */
-    text-align: left; /* Align text to the left */
-    margin: auto;
-  }
-  
-  .figlet {
-    font-size: 15px;
-    position: relative; /* Needed for positioning the subtitle within it */
-    display: inline-block;
-  }
+	   .header {
+	       position: relative; /* Required for absolute positioning inside it */
+	       display: inline; /* Center header */
+	       text-align: left; /* Align text to the left */
+	       margin: auto;
+	   }
+	   
+	   .figlet {
+	       font-size: 15px;
+	       position: relative; /* Needed for positioning the subtitle within it */
+	       display: inline-block;
+	   }
 
-  .subtitle {
-    font-size: 20px;
-    position: absolute;
-    bottom: 0;
-    left: 30;
-    margin-bottom: 10px; /* Optional for spacing from bottom */
-    margin-right: 10px; /* Optional for spacing from right */
-  }
+	   .subtitle {
+	       font-size: 20px;
+	       position: absolute;
+	       bottom: 0;
+	       left: 30;
+	       margin-bottom: 10px; /* Optional for spacing from bottom */
+	       margin-right: 10px; /* Optional for spacing from right */
+	   }
 
-  .gt {
-    position: fixed;
-    bottom: 10px; /* Adjust this to set the distance from the bottom */
-    transform: translateX(-50%); /* Adjust the horizontal position */
-  }
-  .blink {
-    animation: blink 0.4s linear infinite;
-    position: fixed;
-  }
-</style>
-</head>
+	   .gt {
+	       font-size: 20px;
+	       position: fixed;
+	       left: 5px;
+	       min-width:3000px;
+	       margin-right: 2000px;
+	       bottom: 0px; /* Adjust this to set the distance from the bottom */
+	       background-color: hsl(154 50% 5%);
+	       padding: 5px;
+	       z-index: 10; /* Make sure it's above other content */
+	       margin: 0;
+	   }
+      .blink {
+	  font-size:20px;
+	       animation: blink 0.6s linear infinite;
+	       position: fixed;
+	   }
+    </style>
+  </head>
 
-<body>
-  <pre>
-   <div class="header">
-  <div class="figlet">
+  <body>
+    <pre>
+      <header class="header">
+	<div class="figlet">
      _                   _      __        __   _       _
     | | ___  _ __   __ _| |__   \ \      / /__(_)_ __ | |__   __ _ _   _ _ __ ___
  _  | |/ _ \| '_ \ / _` | '_ \   \ \ /\ / / _ \ | '_ \| '_ \ / _` | | | | '_ ` _ \
 | |_| | (_) | | | | (_| | | | |   \ V  V /  __/ | | | | |_) | (_| | |_| | | | | | |
  \___/ \___/|_| |_|\__,_|_| |_|    \_/\_/ \___|_|_| |_|_.__/ \__,_|\__,_|_| |_| |_|
-  </div>
-  <div class="subtitle">Binary Analysis | Algebraic Geometry | Cryptography</div>
-  </div>
-  </pre>
-  
-  <p class="gt">&gt;<span class="blink">_</span></p>
-  
-  <div id="glare"></div>
-</body>
+	</div>
+	<div class="subtitle">Binary Analysis | Algebraic Geometry | Cryptography</div>
+      </header>
+    </pre>
+
+    <div class="about">
+      <h2>About Me</h2>
+    </div>
+    <br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 1fasdasdosajdp9asik[gokfpgjsoidfofijdfsopiasjroij <br> <br><br><br><br><br>
+    <p class="gt">[jonah@weinbaum ~]$<span class="blink"> _</span></p>
+    
+    <div id="glare"></div>
+
+    <script>
+    // Adjust scroll behavior to move by one line at a time
+    document.getElementById('scroll-container').addEventListener('wheel', function(event) {
+      event.preventDefault(); // Prevent default scroll behavior
+
+      // Scroll by one line (typically around 30px per line)
+      let scrollAmount = 1; // Adjust based on your preference
+      if (event.deltaY > 0) {
+        this.scrollBy(0, scrollAmount); // Scroll down
+      } else {
+        this.scrollBy(0, -scrollAmount); // Scroll up
+      }
+    });
+
+</script>
+  </body>
+ 
 </html>
