@@ -1,17 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Jonah's cool website</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <meta name="description" content="Jonah's Webpage" />
-  <link rel="icon" href="img/favicon.png">
-  <link rel="stylesheet" type="text/css" href="index.css"/>
+<style>
+  body {
+    background: hsl(154 50% 5%);
+    color: hsl(154 84% 70%);
+    text-shadow: 0 0 4px hsl(154 84% 70%);
+    font-family: monospace;
+    font-size: 16px;
+  }
+
+  pre {
+    margin: auto;
+    display: flex;
+    text-align: left;
+  }
+
+  #glare {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* ensure the effect doesn't cover the text */
+  }
+
+  #interlaced {
+    position: fixed;
+    pointer-events: none;
+  }
+
+  @keyframes blink {
+    0% {opacity: 0}
+    30% {opacity: 1}
+    70% {opacity: 1}
+    100% {opacity: 0}
+  }
+
+  .header {
+    position: relative; /* Required for absolute positioning inside it */
+    display: inline; /* Center header */
+    text-align: left; /* Align text to the left */
+    margin: auto;
+  }
+  
+  .figlet {
+    font-size: 15px;
+    position: relative; /* Needed for positioning the subtitle within it */
+    display: inline-block;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 30;
+    margin-bottom: 10px; /* Optional for spacing from bottom */
+    margin-right: 10px; /* Optional for spacing from right */
+  }
+
+  .gt {
+    position: fixed;
+    bottom: 10px; /* Adjust this to set the distance from the bottom */
+    transform: translateX(-50%); /* Adjust the horizontal position */
+  }
+  .blink {
+    animation: blink 0.4s linear infinite;
+    position: fixed;
+  }
+</style>
 </head>
 
 <body>
-  <h1>
-    Jonah Weinbaum
-  </h1>
+  <pre>
+   <div class="header">
+  <div class="figlet">
+     _                   _      __        __   _       _
+    | | ___  _ __   __ _| |__   \ \      / /__(_)_ __ | |__   __ _ _   _ _ __ ___
+ _  | |/ _ \| '_ \ / _` | '_ \   \ \ /\ / / _ \ | '_ \| '_ \ / _` | | | | '_ ` _ \
+| |_| | (_) | | | | (_| | | | |   \ V  V /  __/ | | | | |_) | (_| | |_| | | | | | |
+ \___/ \___/|_| |_|\__,_|_| |_|    \_/\_/ \___|_|_| |_|_.__/ \__,_|\__,_|_| |_| |_|
+  </div>
+  <div class="subtitle">Binary Analysis | Algebraic Geometry | Cryptography</div>
+  </div>
+  </pre>
+  
+  <p class="gt">&gt;<span class="blink">_</span></p>
+  
+  <div id="glare"></div>
 </body>
 </html>
