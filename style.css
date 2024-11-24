@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Vulf'; 
+    src: url('fonts/VulfMono-Regular.otf');
+    font-weight: normal; 
+    font-style: normal;  
+}
+
+body {
+    background: hsl(154 50% 5%);
+    color: hsl(154 84% 70%);
+    text-shadow: 0 0 4px hsl(154 84% 70%);
+    font-family: 'Vulf';
+    font-size: 16px;
+}
+
+pre {
+    margin: auto;
+    display: flex;
+    text-align: left;
+}
+
+#glare {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+#interlaced {
+    position: fixed;
+    pointer-events: none;
+}
+
+@keyframes blink {
+    0% {opacity: 0}
+    30% {opacity: 1}
+    70% {opacity: 1}
+    100% {opacity: 0}
+}
+
+.header {
+    position: relative;
+    font-family: 'Vulf';
+    left: 700;
+}
+
+.about  {
+    position: fixed;
+    top: 220;
+    left: 50;
+}
+
+.about h2 {
+    font-size: 30px;
+}
+
+.about p {
+    font-size: 20px;
+}
+
+.figlet {
+    font-size: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.subtitle {
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 180;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.gt {
+    font-size: 20px;
+    position: fixed;
+    left: 5px;
+    min-width:3000px;
+    margin-right: 2000px;
+    bottom: 0px;
+    background-color: hsl(154 50% 5%);
+    padding: 5px;
+    z-index: 10;
+    margin: 0;
+}
+
+.blink {
+    font-size:20px;
+    animation: blink 0.6s linear infinite;
+    position: fixed;
+}
