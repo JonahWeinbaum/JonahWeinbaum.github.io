@@ -11,26 +11,13 @@ body {
     text-shadow: 0 0 4px hsl(154 84% 70%);
     font-family: 'Vulf';
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 pre {
     margin: auto;
     display: flex;
     text-align: left;
-}
-
-#glare {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
-#interlaced {
-    position: fixed;
-    pointer-events: none;
 }
 
 @keyframes blink {
@@ -40,24 +27,31 @@ pre {
     100% {opacity: 0}
 }
 
+.blink {
+    font-size:20px;
+    animation: blink 0.6s linear infinite;
+    position: fixed;
+}
+
 .header {
     position: relative;
     font-family: 'Vulf';
     left: 700;
 }
 
-.about  {
-    position: fixed;
-    top: 220;
+.section  {
+    position: relative;
+    top: 50;
     left: 50;
 }
 
-.about h2 {
+.section h2 {
     font-size: 30px;
 }
 
-.about p {
+.section p {
     font-size: 20px;
+    max-width: 2400px;
 }
 
 .figlet {
@@ -88,8 +82,4 @@ pre {
     margin: 0;
 }
 
-.blink {
-    font-size:20px;
-    animation: blink 0.6s linear infinite;
-    position: fixed;
-}
+
