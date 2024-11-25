@@ -1,4 +1,4 @@
-@font-face {
+@Font-face {
     font-family: 'Vulf'; 
     src: url('fonts/VulfMono-Regular.otf');
     font-weight: normal; 
@@ -16,26 +16,38 @@ body {
 
 pre {
     display: flex;
+    padding-bottom: 0;
 }
 
-@keyframes blink {
-    0% {opacity: 0}
-    30% {opacity: 1}
-    70% {opacity: 1}
-    100% {opacity: 0}
-}
-
-.blink {
-    font-size:20px;
-    position: relative;
-    animation: blink 0.6s linear infinite;
-}
 
 .header {
-    position: relative;
     margin-left: auto;
     margin-right: auto;
     font-family: 'Vulf';
+    display: flex;
+    padding-bottom: 0;
+}
+
+.header-image {
+    width: 180px;
+    padding-right: 20px;
+    height: auto;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.figlet {
+    font-size: 15px;
+    text-align: left;
+}
+
+.subtitle {
+    padding-left: 5;
+    font-size: 20px;
+    text-align: left;
 }
 
 .section  {
@@ -54,19 +66,6 @@ pre {
     margin-right: auto;
 }
 
-.figlet {
-    font-size: 15px;
-    position: relative;
-    display: inline-block;
-}
-
-.subtitle {
-    font-size: 20px;
-    position: absolute;
-    bottom: 0;
-    left: 180;
-}
-
 .gt {
     font-size: 20px;
     position: fixed;
@@ -79,6 +78,19 @@ pre {
     padding: 5px;
     z-index: 10;
     margin: 0;
+}
+
+.blink {
+    font-size:20px;
+    position: relative;
+    animation: blink 0.6s linear infinite;
+}
+
+@keyframes blink {
+    0% {opacity: 0}
+    30% {opacity: 1}
+    70% {opacity: 1}
+    100% {opacity: 0}
 }
 
 
