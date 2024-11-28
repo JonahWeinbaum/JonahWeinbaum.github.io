@@ -98,3 +98,15 @@ a {
     color: hsl(154 84% 70%);
     text-shadow: 0 0 4px hsl(154 84% 70%);
 }
+
+
+.terminal-input {
+  background: none;
+  border: none;
+  color:hsl(154 84% 70%);
+  font-size: 20px; /* Match the font size */
+  margin: 0;
+  outline: none; /* Remove the focus outline */
+  caret-color: hsl(154 84% 70%);
+}
+
