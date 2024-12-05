@@ -14,6 +14,7 @@ document.addEventListener('keydown', (event) => {
 	// Prevent default Backspace behavior
 	event.preventDefault();
     } else if (event.key === 'Enter') {
+	
 	terminalText.textContent = " ";
     }
 });
