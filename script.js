@@ -13,8 +13,7 @@ document.addEventListener('keydown', (event) => {
 	}
 	// Prevent default Backspace behavior
 	event.preventDefault();
-    } else if (event.key === 'Enter') {
-	
+    } else if (event.key === 'Enter') {	
 	terminalText.textContent = " ";
     }
 });
@@ -26,4 +25,11 @@ document.querySelectorAll('a').forEach(link => {
             event.preventDefault();
         }
     });
+});
+
+// Prevent space from paging down
+window.addEventListener("keydown", function(e) {
+    if (e.code === "Space" && e.target === document.body) {
+        e.preventDefault();
+    }
 });
