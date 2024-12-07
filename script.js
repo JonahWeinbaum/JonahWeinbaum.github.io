@@ -18,3 +18,12 @@ document.addEventListener('keydown', (event) => {
 	terminalText.textContent = " ";
     }
 });
+
+// Prevent links from activating on enter
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+        }
+    });
+});
