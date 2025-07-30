@@ -66,17 +66,25 @@ pre {
 }
 
 .gt {
-    font-size: 20px;
-    position: fixed;
-    left: 5px;
-    min-width:100%; 
-    height: auto;
-    width: auto;
-    bottom: 0px;
-    background-color: hsl(154 50% 5%);
-    padding: 5px;
-    z-index: 10;
-    margin: 0;
+  font-size: 20px;
+  position: fixed;
+  left: 5px;
+  min-width: 100%;
+  height: auto;
+  width: auto;
+  bottom: 0px;
+  background-color: hsl(154 50% 5%);
+  padding: 5px;
+  z-index: 10;
+  margin: 0;
+}
+
+.gt.fullscreen {
+  top: 0; /* Expand to top of viewport */
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  padding: 20px; /* More padding in full-screen for readability */
+  overflow-y: auto; /* Scroll if output exceeds viewport */
 }
 
 .blink {
@@ -107,3 +115,19 @@ a {
   caret-color: hsl(154 84% 70%);
 }
 
+#terminal-output {
+  color: hsl(154 84% 70%);
+  font-family: 'Vulf';
+  font-size: 20px;
+  white-space: pre-wrap; /* Preserve newlines and wrap text */
+  margin: 0;
+  padding: 0; /* No padding when empty */
+  max-height: 150px; /* Limit height when output exists */
+  overflow-y: auto; /* Scroll if output is long */
+  display: none; /* Hidden when empty */
+}
+
+#terminal-output:not(:empty) {
+  display: block; /* Show when output exists */
+  padding: 5px; /* Add padding only when content is present */
+}

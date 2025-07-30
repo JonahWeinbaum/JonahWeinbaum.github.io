@@ -28,7 +28,8 @@
     <!-- About Me -->
     <div class="section">
       <h2>About Me</h2>
-      <p>I am a master's student in computer science working in the Trust Lab at Dartmouth College focusing in computer security and binary analysis. My bachelors degree is in pure mathematics and computer science so I generally lean towards intersections of these two fields. I am a fan of the standardization and canonicalization of computer science curricula and theory, perhaps with a tinge of bias from my math background. I am in the process of applying for a doctorate in computer science to continue work on my ongoing projects in binary analysis, machine learning, and cryptography.</p>
+      <p>
+	I am a Ph.D. student in Computer Science at Tufts University, where I study programming languages and computer security in the Tufts Programming Languages Research Group [<a href="https://tupl.cs.tufts.edu/" target="_blank">TuPL</a>], advised by <a href="https://www.cs.tufts.edu/~jfoster" target="_blank">Jeffery Foster</a>. I received my Master's in Computer Science at Dartmouth College where I worked in the Trust Lab on projects relating to computer security and binary analysis. My Bachelors degree is in pure mathematics and computer science so I generally lean towards intersections of these two fields. I am a fan of the standardization and canonicalization of computer science curricula and theory, perhaps with a tinge of bias from my math background.</p>
     </div>
 
     <br><br>
@@ -39,6 +40,11 @@
       <p>- A Census of Cubic Fourfolds over 𝔽₂ [<a href="https://www.ams.org/journals/mcom/0000-000-00/S0025-5718-2024-04010-3/" target="_blank">link</a>] [<a href="material/cubic_fourfolds.pdf" target="_blank">pdf</a>]
 	<span style="display: block; margin-left: 4ch; text-indent: -2ch;">
         * Asher Auel, Avinash Kulkarni, Jack Petok, and Jonah Weinbaum
+	</span>
+      </p>
+      <p>- Master's Thesis [<a href="https://www.youtube.com/watch?v=_vFl2LWimqg&t=2965s" target="_blank">presentation</a>] 
+	<span style="display: block; margin-left: 4ch; text-indent: -2ch;">
+	* Jonah Weinbaum
 	</span>
       </p>
       <p>- Undergraduate Thesis [<a href="https://math.dartmouth.edu/theses/undergrad/2023/Weinbaum-thesis.pdf" target="_blank">link</a>] [<a href="material/thesis_presentation.mp4" target="_blank">presentation</a>] 
@@ -53,7 +59,7 @@
     <!-- Projects -->
     <div class="section">
       <h2>Projects</h2>
-      <p style="display: block; margin-left: 2ch; text-indent: -2ch;">- Building a Bombe [<a href="https://github.com/JonahWeinbaum/building-a-bombe" target="_blank">github</a>] [<a href="material/bombe_presentation.pdf" target="_blank">presentation]</a>
+      <p style="display: block; margin-left: 2ch; text-indent: -2ch;">- Action This Day [<a href="https://github.com/JonahWeinbaum/building-a-bombe" target="_blank">github</a>] [<a href="https://www.youtube.com/watch?v=_vFl2LWimqg&t=2965s" target="_blank">presentation</a>] 
 	<span style="display: block; margin-left: 2ch; text-indent: -2ch;">* Examining the permutation and probabilty theory that allowed cryptographers to best German encryption during WWII. New results in permutation theory allow for a more holistic analysis of the Bombe's efficacy
 	</span>
       </p>
@@ -62,9 +68,9 @@
 	  * Developing theory and tools which allows SVMs to generalize to arbitrary Riemannian manifolds allowing for more accurate classification even with sparse data sets
 	</span>
       </p>
-      <p style="display: block; margin-left: 2ch; text-indent: -2ch;">- Dynamic Java Deserialization Filtering via Taint Tracking
+      <p style="display: block; margin-left: 2ch; text-indent: -2ch;">- Plausible Cache Deniability for Spectre Attack Mitigation
 	<span style="display: block; margin-left: 2ch; text-indent: -2ch;">
-	  * Preventing deserialization vulnerabilities in Java by analyzing serialize data being passed over the network in real-time using taint tracking
+	  * Preventing Spectre and other side-channel cache leakage attacks by creating plausible deniability in cache hit and miss rates
 	</span>
       </p>
     </div>
@@ -173,9 +179,12 @@
 
     <br><br><br><br>
     
-    <!-- PS1 Display -->  
-    <p class="gt">[jonah@weinbaum ~]$<span id="terminal-input"> </span><span class="blink">_</span></p>
-    
+    <!-- PS1 Display -->
+    <!-- <p class="gt">[jonah@weinbaum ~]$<span id="terminal-input"> </span><span class="blink">_</span></p> -->
+    <div class="gt">
+      <span id="terminal-input" class="terminal-input">[jonah@weinbaum ~]$ </span><span class="blink">_</span>
+      <pre id="terminal-output"></pre>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
