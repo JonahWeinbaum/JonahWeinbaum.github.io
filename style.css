@@ -131,3 +131,21 @@ a {
   display: block; /* Show when output exists */
   padding: 5px; /* Add padding only when content is present */
 }
+
+.pdf-container {
+  width: 90%;
+  margin: 20px auto;
+  border: 2px solid hsl(154 84% 70%);
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap; 
+  gap: 20px;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
