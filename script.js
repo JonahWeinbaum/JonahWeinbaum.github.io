@@ -38,7 +38,7 @@ function handleCommand(input) {
   } else if (command.startsWith("cd ")) {
     const dir = command.slice(3).trim(); // Extract directory after "cd "
     if (dir === "blog") {
-      window.location.href = "blog.html"; // Navigate to blog.html
+      window.location.href = "blog/blog.html"; // Navigate to blog.html
       return; // Exit to prevent output
     } else if (dir === "~" || dir === "/" || dir == "." || dir === ".." || dir === "home" || dir === "../") {
       window.location.href = "index.html"; // Navigate to main page
