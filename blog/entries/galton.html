@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PDF Color Inversion</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Uniform Galton Board</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body style="background: black; margin: 0;">
   <div class="pdf-container" id="pdf-container"></div>
@@ -12,7 +12,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
     window.onload = function () {
-      const url = "../../material/galton.pdf";
+      const url = "/material/galton.pdf";
       const h = 154; // green hue
       const s = 50; // 100%
       const l = 50;  // 50%
@@ -99,6 +99,13 @@
         return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
       }
     };
-  </script>
-</body>
+    </script>
+      <!-- PS1 Display -->
+    <div class="gt">
+      <span id="terminal-input" class="terminal-input">[jonah@weinbaum blog]$ </span><span class="blink">_</span>
+      <pre id="terminal-output"></pre>
+    </div>
+
+  </body>
+  <script src="/script.js"></script>
 </html>

@@ -8,6 +8,8 @@ abs_paths =
 	blog:["~/blog", "/home/jonah/blog"]
     };
 
+blog_entries = ["galton.html"];
+
 function printOutput(text) {
   const output = document.getElementById('terminal-output');
   output.textContent = text + "\n"; // Replace content
