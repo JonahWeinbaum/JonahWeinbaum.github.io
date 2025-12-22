@@ -1,6 +1,6 @@
 @Font-face {
     font-family: 'Vulf'; 
-    src: url('fonts/VulfMono-Regular.otf');
+    src: url('/fonts/VulfMono-Regular.otf');
     font-weight: normal; 
     font-style: normal;  
 }

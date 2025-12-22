@@ -1,5 +1,12 @@
+
 const terminalText = document.getElementById('terminal-input');
 const terminalContainer = document.querySelector('.gt');
+
+abs_paths =
+    {
+	home:["~", "/home/jonah"],
+	blog:["~/blog", "/home/jonah/blog"]
+    };
 
 function printOutput(text) {
   const output = document.getElementById('terminal-output');
@@ -7,10 +14,112 @@ function printOutput(text) {
   output.scrollTop = output.scrollHeight; // Scroll to bottom
 }
 
+function ps1() {
+   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+   let ttext = "[jonah@weinbaum ";
+
+   switch (currentPage) {
+     case "index.html":
+       ttext += "~";
+       break;
+     case "blog.html":
+       ttext += "blog";
+       break;
+     default:
+       ttext += "?";
+   }
+   ttext += "]$ ";
+   return ttext;
+}
+
+function cd(dir) {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    // Handle absolute paths
+    if (abs_paths.home.includes(dir)) {
+	window.location.href = "/index.html"; // Navigate to blog.html
+	return 0;
+    } else if (abs_paths.blog.includes(dir)) {
+	window.location.href = "/blog/blog.html"; // Navigate to blog.html
+	return 0;
+    }
+
+    // Handle relative paths
+    switch(currentPage) {
+      case "index.html":
+	switch(dir) {
+            case ".":
+            case "./":
+                return 0;
+	    case "..":
+            case "../":
+		return -1;
+	    case "blog":
+		window.location.href = "/blog/blog.html"; // Navigate to blog.html
+	        return 0;
+            default: 
+                return 1;
+	}
+	break;
+      case "blog.html":
+	switch(dir) {
+            case ".":
+            case "./":
+                return 0;
+	    case "..":
+            case "../":
+		window.location.href = "/index.html"; // Navigate to blog.html
+		return 0;
+	    case "entries":
+		window.location.href = "/blog/blog.html"; // Navigate to blog.html
+	        return 0;
+            default: 
+                return 1;
+	}
+	break;
+      default:
+	return 1;
+    }
+}
+
+function ls() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    let lst = ""
+    switch(currentPage) {
+      case "index.html":
+	  lst += "blog";
+	  break;
+      case "blog.html":
+	  lst += "entries";
+	  break;
+      default:
+	lst += "/unknown";
+    }
+    return lst;
+}
+
+function pwd() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    let wd = "/home/jonah"
+    switch(currentPage) {
+      case "index.html":
+	  wd += "";
+	  break;
+      case "blog.html":
+	  wd += "/blog";
+	  break;
+      default:
+	wd += "/unknown";
+    }
+    return wd;
+}
+
 function handleCommand(input) {
-  const command = input.replace("[jonah@weinbaum ~]$", "").replace("_", "").trim(); // Remove prompt and cursor
+  const command = input.replace(/\[jonah@weinbaum .*?\]\$/g, "").replace("_", "").trim(); // Remove prompt and cursor
   const commandLine = input.replace("_", ""); // Show command without cursor
+
   let outputText = ""; // Start with the command
+
+  console.log(command)
 
   if (command === "clear") {
     const output = document.getElementById('terminal-output');
@@ -23,47 +132,31 @@ function handleCommand(input) {
   terminalContainer.classList.add('fullscreen');
 
   if (command === "help") {
-    outputText += "Available commands:\n- help\n- ls\n- cd [dir]\n- pwd\n- clear";
+      outputText += "Available commands:\n- help\n- ls\n- cd [dir]\n- pwd\n- clear";
   } else if (command === "ls") {
-      outputText += "home	blog";
+      outputText += ls();
   } else if (command === "pwd") {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    if (currentPage === "index.html") {
-      outputText += "/home/jonah";
-    } else if (currentPage === "blog.html") {
-      outputText += "/home/jonah/blog";
-    } else {
-      outputText += "/home/jonah/unknown";
-    }
+      outputText += pwd();
   } else if (command.startsWith("cd ")) {
     const dir = command.slice(3).trim(); // Extract directory after "cd "
-    if (dir === "blog") {
-      window.location.href = "blog/blog.html"; // Navigate to blog.html
-      return; // Exit to prevent output
-    } else if (dir === "~" || dir === "/" || dir == "." || dir === ".." || dir === "home" || dir === "../") {
-      window.location.href = "index.html"; // Navigate to main page
-      return; // Exit to prevent output
-    } else {
-      outputText += "cd: no such file or directory: " + dir;
-    }
+      let res = cd(dir);
+      if (res) {
+	  if (res === -1) {
+	      outputText += "cd: invalid permissions:" + dir;
+	  } else {
+	      outputText += "cd: no such file or directory: " + dir;
+          }
+      }
   } else {
-      outputText += "jsh: " + command + ": command not found ";
+     outputText += "jsh: " + command + ": command not found ";
   }
   printOutput(outputText); // Print command and output
 }
 
 document.addEventListener('keydown', (event) => {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    let ttext = "[jonah@weinbaum ";
+  
+  let ttext = ps1();
 
-   if (currentPage === "index.html") {
-     ttext += "~";
-   } else if (currentPage === "blog.html") {
-       ttext += "blog"
-   } else {
-       ttext += "?";
-   }
-    ttext += "]$ ";
   if (event.key.length === 1) {
     // Add typed character after prompt
     if (terminalText.textContent.length < 50) {
